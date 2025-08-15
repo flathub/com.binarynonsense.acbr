@@ -73,11 +73,11 @@ modules:
       - generated-sources.json
       - type: file
         dest-filename: com.binarynonsense.acbr.metainfo.xml
-        url: https://raw.githubusercontent.com/binarynonsense/flathub/e1322de9c3092f8fc5bf9f3a4e458c9260830e3e/com.binarynonsense.acbr.metainfo.xml
-        sha256: 24e50ff907e26650c3cf3787cb5e94c2ac6aef40b662d5e1a42171d00585d34d
+        url: https://raw.githubusercontent.com/binarynonsense/acbr-flathub/aa3af362270443e3ed9ff9d0640ba1fd00ee9bb3/com.binarynonsense.acbr.metainfo.xml
+        sha256: a156de9478954db03b858905e576fef7da5febf89c16f69237801eb8c2ccc152
       - type: file
         dest-filename: acbr-comic-book-reader.desktop
-        url: https://raw.githubusercontent.com/binarynonsense/flathub/c9932a156199e640563dd859f8c62018ab68e44a/acbr-comic-book-reader.desktop
+        url: https://raw.githubusercontent.com/binarynonsense/acbr-flathub/315fd5b09a52f2d04636b4c83693f00f974a5e7b/acbr-comic-book-reader.desktop
         sha256: 338c0fc48104ff5b1aebe391cc607acfbe319592da7af6a4055d4a1df6cb046b
       # wrapper to launch the app
       - type: script
