@@ -1,9 +1,9 @@
 app-id: com.binarynonsense.acbr
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: "24.08"
 sdk: org.freedesktop.Sdk
 base: org.electronjs.Electron2.BaseApp
-base-version: '24.08'
+base-version: "24.08"
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.node20
 command: run.sh
@@ -34,7 +34,7 @@ modules:
       env:
         XDG_CACHE_HOME: /run/build/acbr/flatpak-node/cache
         npm_config_cache: /run/build/acbr/flatpak-node/npm-cache
-        npm_config_offline: 'true'
+        npm_config_offline: "true"
     build-commands:
       - jq '.build.linux.target="dir"' <<<$(<package.json) > package.json
       - jq '.build.files=["!flatpak-node${/*}"]' <<<$(<package.json) > package.json
@@ -54,7 +54,7 @@ modules:
       # patch desktop filename in built-in package.json
       - patch-desktop-filename ${FLATPAK_DEST}/acbr/resources/app.asar
       # install icons
-      - install -Dm644 src/assets/images/icon_256x256.png ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/acbr-comic-book-reader.png
+      - install -Dm644 icon_256x256.png ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/acbr-comic-book-reader.png
       # install app wrapper
       - install -Dm755 run.sh -t ${FLATPAK_DEST}/bin/
       # install metadata
@@ -79,6 +79,10 @@ modules:
         dest-filename: acbr-comic-book-reader.desktop
         url: https://raw.githubusercontent.com/binarynonsense/acbr-flathub/315fd5b09a52f2d04636b4c83693f00f974a5e7b/acbr-comic-book-reader.desktop
         sha256: 338c0fc48104ff5b1aebe391cc607acfbe319592da7af6a4055d4a1df6cb046b
+      - type: file
+        dest-filename: icon_256x256.png
+        url: https://raw.githubusercontent.com/binarynonsense/acbr-flathub/2482f42ed38c7bc2178965a1c81dbea60c11cbba/icon_256x256.png
+        sha256: a598bd2cefe99372d930028102b881767d65406edbf3d8432bceae952d9983a6
       # wrapper to launch the app
       - type: script
         dest-filename: run.sh
