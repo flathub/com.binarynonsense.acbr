@@ -1,9 +1,9 @@
 app-id: com.binarynonsense.acbr
 runtime: org.freedesktop.Platform
-runtime-version: "24.08"
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 base: org.electronjs.Electron2.BaseApp
-base-version: "24.08"
+base-version: '24.08'
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.node20
 command: run.sh
@@ -34,7 +34,7 @@ modules:
       env:
         XDG_CACHE_HOME: /run/build/acbr/flatpak-node/cache
         npm_config_cache: /run/build/acbr/flatpak-node/npm-cache
-        npm_config_offline: "true"
+        npm_config_offline: 'true'
     build-commands:
       - jq '.build.linux.target="dir"' <<<$(<package.json) > package.json
       - jq '.build.files=["!flatpak-node${/*}"]' <<<$(<package.json) > package.json
