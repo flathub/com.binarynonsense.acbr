@@ -1,9 +1,9 @@
 app-id: com.binarynonsense.acbr
 runtime: org.freedesktop.Platform
-runtime-version: "24.08"
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 base: org.electronjs.Electron2.BaseApp
-base-version: "24.08"
+base-version: '24.08'
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.node20
 command: run.sh
@@ -34,7 +34,7 @@ modules:
       env:
         XDG_CACHE_HOME: /run/build/acbr/flatpak-node/cache
         npm_config_cache: /run/build/acbr/flatpak-node/npm-cache
-        npm_config_offline: "true"
+        npm_config_offline: 'true'
     build-commands:
       - jq '.build.linux.target="dir"' <<<$(<package.json) > package.json
       - jq '.build.files=["!flatpak-node${/*}"]' <<<$(<package.json) > package.json
@@ -62,8 +62,8 @@ modules:
     sources:
       - type: archive
         archive-type: tar-gzip
-        url: https://api.github.com/repos/binarynonsense/comic-book-reader/tarball/v3.12.1
-        sha256: ff817378f7f299c6969d988c1c61b33b7b98b7ce4edd7ed78d11172156a75190
+        url: https://api.github.com/repos/binarynonsense/comic-book-reader/tarball/v3.12.2
+        sha256: 02b63198bf50905b8353478db19c324746b0c96de4aab17f9765729b116b7ec7
         x-checker-data:
           type: json
           url: https://api.github.com/repos/binarynonsense/comic-book-reader/releases/latest
